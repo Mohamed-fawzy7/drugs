@@ -1,0 +1,5 @@
+### get all drugs
+GET http://localhost:3000/drugs/all
+
+### add pharmacy
+POST http://localhost:3000/addpharmacy

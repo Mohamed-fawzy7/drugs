@@ -1,0 +1,65 @@
+<form action="/api/addpharmacy" method="post">
+    <label for="team_name">Enter pharmacy name: </label>
+    <input id="name" type="text" name="name" >
+    <br/>
+    <label for="team_name">Enter pharmacy location: </label>
+    <input id="location" type="text" name="location" >
+    <br/>
+    <input type="submit" value="Add Pharmacy">
+</form>
+
+
+<section class="default-section">
+    <div class="information">
+
+        <form action="/api/adddrug" method="post">
+            <label for="drug_name">Enter drug name: </label>
+            <input id="drug_name" type="text" name="drug_name" >
+            <br/>
+            <label for="team_name">Enter drug location: </label>
+            <input id="type" type="text" name="type" >
+            <br/>
+
+            <label for="team_name">Enter drug price: </label>
+            <input id="price" type="text" name="price" >
+            <br/>
+
+            <label for="team_name">Enter drug quantity: </label>
+            <input id="quantity" type="text" name="quantity" >
+            <br/>
+
+            <label for="team_name">Enter drug quantity: </label>
+            <select name="pharmacy">
+                <% pharmacies.forEach(function (pharmacy) {  %>
+                    <% if(pharmacy && pharmacy.name) {%>
+                     <option selected value="<%= pharmacy._id %>"><%= pharmacy.name %></option>
+                     <% } else { %>
+                         <option value="<%= pharmacy._id %>"><%= pharmacy %></option>
+                     <% } %>
+             <% }) %>
+            </select>
+
+            <br/>
+            <input type="submit" value="Add drug">
+        </form>
+
+
+        <h2>
+            find drug information
+        </h2>
+        <select name="pharmacy" onchange="location = `/drugs/${this.value}`">
+
+            <option selected > select drug</option>
+            <% drugs.forEach(function (drug) {   %>
+                <% if(drug) {%>
+                 <option value="<%= drug %>"><%= drug %></option>
+                 <% } else { %>
+                     <option value="<%= drug %>"><%= drug %></option>
+                 <% } %>
+         <% }) %>
+        </select>
+
+
+        
+   </div>
+</section>

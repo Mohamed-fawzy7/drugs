@@ -1,0 +1,10 @@
+<% drugs.forEach(function (drug) {   %>
+    <p>drug name: <%= drug.name %> </p>
+    <p>price: <%= drug.price %></p>
+    <p>type: <%= drug.type %></p>
+    <p>quantity : <%= drug.quantity %></p>
+    <p>pharmacy name:<%= drug.pharmacy.name %> </p> 
+    <p>pharmacy location:<%= drug.pharmacy.location %></p> 
+    <br/>
+     ==========================================
+<% }) %>
